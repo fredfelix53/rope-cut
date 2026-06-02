@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0a1a">
+  <title>Rope Cut</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hud-bar">
+    <div class="hud-left">
+      <span class="hud-title">✂️ ROPE CUT</span>
+    </div>
+    <div class="hud-right">
+      <span class="hud-item" onclick="if(window.ShopUI)ShopUI.showTab('upgrades')"><span>⚡</span></span>
+      <span class="hud-item"><span>🪙</span> <span id="hud-coins">150</span></span>
+      <span class="hud-item"><span>💎</span> <span id="hud-gems">0</span></span>
+    </div>
+  </div>
+
+  <div id="game-container">
+    <div id="level-info">
+      <div class="label">Level</div>
+      <div class="value" id="level-value">1</div>
+    </div>
+    <div id="star-display">
+      <div class="label">Stars</div>
+      <div class="value" id="stars-value">⭐☆☆</div>
+    </div>
+    <div id="rope-count">
+      <div class="label">Ropes</div>
+      <div class="value" id="ropes-value">0</div>
+    </div>
+
+    <canvas id="game-canvas"></canvas>
+
+    <div id="button-bar">
+      <button class="game-btn btn-primary" id="play-btn">▶ Play</button>
+      <button class="game-btn btn-shop" id="shop-btn">🛒 Shop</button>
+      <button class="game-btn btn-upgrade" onclick="if(window.ShopUI){ShopUI.open();ShopUI.showTab('upgrades')}">⚡ Upgrade</button>
+    </div>
+  </div>
+
+  <div class="game-over-box" id="game-over-box">
+    <h2>😢 Items Missed!</h2>
+    <p style="color:var(--text-secondary);margin-bottom:12px;">Not all items made it to the basket!</p>
+    <div class="btn-group">
+      <button class="game-btn btn-primary" id="restart-btn">🔁 Retry</button>
+    </div>
+  </div>
+
+  <div class="level-complete-box" id="level-complete-box">
+    <h2>🎉 Level Complete!</h2>
+    <div class="stars-row" id="stars-row">⭐⭐⭐</div>
+    <div class="final-score" id="complete-level">Level 1</div>
+    <div style="margin:8px 0;color:var(--accent-gold);font-size:18px;" id="reward-display">+50 🪙</div>
+    <div class="btn-group">
+      <button class="game-btn btn-win" id="next-level-btn">▶ Next Level</button>
+    </div>
+  </div>
+
+  <div id="notification"></div>
+
+  <script src="visuals.js"></script>
+  <script src="progression.js"></script>
+  <script src="shop.js"></script>
+  <script src="ads-manager.js"></script>
+  <script src="challenges-system.js"></script>
+  <script src="store-rotator.js"></script>
+  <script src="retention-system.js"></script>
+  <script src="collectibles-system.js"></script>
+  <script src="tutorial-system.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
